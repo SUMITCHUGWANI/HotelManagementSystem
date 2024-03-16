@@ -75,7 +75,5 @@ public class Main {
 
         ratingList =  ratingRepo.getRating(78913, Order.ASC, Filter.MEDIUM_RANGE);
         System.out.println(ratingList);
-
-        }
     }
 }
