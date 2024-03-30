@@ -39,7 +39,14 @@ public class Hotel {
             }
             return ratingComparator;
         });
-        recentOrderRating = new TreeSet<>((a, b)-> b.getDate().compareTo(a.getDate()));
+
+        recentOrderRating = new TreeSet<>((a,b)-> {
+            int ratingComparator = b.getRating().compareTo(a.getRating());
+            if (ratingComparator == 0){
+                return a.getDate().compareTo(b.getDate());
+            }
+            return ratingComparator;
+        });
     }
 
     public Hotel(int id, String name) {
